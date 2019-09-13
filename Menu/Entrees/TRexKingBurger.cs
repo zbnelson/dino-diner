@@ -1,21 +1,58 @@
-﻿using System.Collections.Generic;
+﻿/*  TRexKingBurger.cs
+*   Author: Zachary Nelson
+*/
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
     public class TRexKingBurger
     {
+        /// <summary>
+        /// creates boolean for if bun is included
+        /// </summary>
         private bool bun = true;
+        /// <summary>
+        /// creates boolean for if pickle is included
+        /// </summary>
         private bool pickle = true;
+        /// <summary>
+        /// creates boolean for if ketchup is included
+        /// </summary>
         private bool ketchup = true;
+        /// <summary>
+        /// creates boolean for if mustard is included
+        /// </summary>
         private bool mustard = true;
+        /// <summary>
+        /// creates boolean for if lettuce is included
+        /// </summary>
         private bool lettuce = true;
+        /// <summary>
+        /// creates boolean for if tomato is included
+        /// </summary>
         private bool tomato = true;
+        /// <summary>
+        /// creates boolean for if onion is included
+        /// </summary>
         private bool onion = true;
+        /// <summary>
+        /// creates boolean for if mayo is included
+        /// </summary>
         private bool mayo = true;
 
+        ///<Summary>
+        ///getter setter for the price
+        ///</Summary>
         public double Price { get; set; }
+
+        ///<Summary>
+        ///getter setter for the calories
+        ///</Summary>
         public uint Calories { get; set; }
 
+        /// <summary>
+        /// Creates a list of ingredients
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -33,43 +70,66 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// sets the price and calories
+        /// </summary>
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+        /// <summary>
+        /// sets bun to false if it's not included
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
-
+        /// <summary>
+        /// sets pickle to false if it's not included
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
-
+        /// <summary>
+        /// sets ketchup to false if it's not included
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
-
+        /// <summary>
+        /// sets mustard to false if it's not included
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
+        /// <summary>
+        /// sets mayo to false if it's not included
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;
         }
+        /// <summary>
+        /// sets onion to false if it's not included
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
         }
+        /// <summary>
+        /// sets lettuce to false if it's not included
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
+        /// <summary>
+        /// sets tomato to false if it's not included
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
