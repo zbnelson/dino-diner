@@ -4,12 +4,13 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class Fryceritops : Side
+    public class MezzorellaSticks : Side
     {
         /// <summary>
         /// Holds the size of the side
         /// </summary>
         private Size size;
+        
         /// <summary>
         /// Sets the pice and calories based on size of the side
         /// </summary>
@@ -22,15 +23,15 @@ namespace DinoDiner.Menu.Sides
                 {
                     case Size.Small:
                         Price = .99;
-                        Calories = 222;
+                        Calories = 540;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 365;
+                        Calories = 610;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 480;
+                        Calories = 720;
                         break;
                     default: break;
                 }
@@ -44,11 +45,11 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// uses the size to find price and calories, then adds the ingredients to the ingredients list
         /// </summary>
-        public Fryceritops()
+        public MezzorellaSticks()
         {
             Size = Size.Small;
-            ingredients.Add("Potato");
-            ingredients.Add("Salt");
+            ingredients.Add("Breading");
+            ingredients.Add("Cheese Product");
             ingredients.Add("Vegetable Oil");
         }
     }

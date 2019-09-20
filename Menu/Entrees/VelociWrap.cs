@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
         /// <summary>
         /// creates boolean for if dressing is included
@@ -20,20 +20,10 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool cheese = true;
 
-        ///<Summary>
-        ///getter setter for the price
-        ///</Summary>
-        public double Price { get; set; }
-
-        ///<Summary>
-        ///getter setter for the calories
-        ///</Summary>
-        public uint Calories { get; set; }
-
         /// <summary>
         /// Creates a list of ingredients
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -50,8 +40,8 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public VelociWrap()
         {
-            this.Price = 6.86;
-            this.Calories = 356;
+            Price = 6.86;
+            Calories = 356;
         }
         /// <summary>
         /// sets dressing to false if it's not included

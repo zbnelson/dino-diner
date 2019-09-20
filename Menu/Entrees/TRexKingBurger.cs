@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         /// <summary>
         /// creates boolean for if bun is included
@@ -40,20 +40,10 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool mayo = true;
 
-        ///<Summary>
-        ///getter setter for the price
-        ///</Summary>
-        public double Price { get; set; }
-
-        ///<Summary>
-        ///getter setter for the calories
-        ///</Summary>
-        public uint Calories { get; set; }
-
         /// <summary>
         /// Creates a list of ingredients
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -75,8 +65,8 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public TRexKingBurger()
         {
-            this.Price = 8.45;
-            this.Calories = 728;
+            Price = 8.45;
+            Calories = 728;
         }
         /// <summary>
         /// sets bun to false if it's not included
