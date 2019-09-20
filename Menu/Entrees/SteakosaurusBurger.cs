@@ -27,7 +27,7 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Creates a list of ingredients
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

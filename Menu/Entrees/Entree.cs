@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*  Entree.cs
+*   Author: Zachary Nelson
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +10,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Class that gets/sets the price, calories and ingredients list
     /// </summary>
-    public class Entree
+    public abstract class Entree
     {
         protected List<string> ingredients = new List<string>();
         /// <summary>
@@ -23,9 +26,6 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public virtual List<string> Ingredients
-        {
-            get { return ingredients; }
-        }
+        public abstract List<string> Ingredients { get; }
     }
 }
