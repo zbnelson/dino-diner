@@ -1,19 +1,19 @@
-﻿/*  Sides.cs
-*   Author: Zachary Nelson
-*/
+﻿using DinoDiner.Menu.SizeEnum;
 using System;
 using System.Collections.Generic;
-using DinoDiner.Menu;
 using System.Text;
-using DinoDiner.Menu.SizeEnum;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
-    /// <summary>
-    /// class that gets/sets the price, calories and ingredients list for sides.
-    /// </summary>
-    public abstract class Side
+    public class Drinks
     {
+        private SodasuarusFlavor flavor;
+        public SodasuarusFlavor Flavor
+        {
+            get { return flavor; }
+            set { flavor = value; }
+        }
+
         protected List<string> ingredients = new List<string>();
         /// <summary>
         /// Gets and sets the price
@@ -28,8 +28,9 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients {
-            get {return ingredients;}
+        public List<string> Ingredients
+        {
+            get { return ingredients; }
         }
 
         /// <summary>
@@ -37,5 +38,11 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         public virtual Size Size { get; set; }
 
+        public Boolean Ice { get; set; } = true;
+
+        public void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }
