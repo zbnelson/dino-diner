@@ -1,11 +1,10 @@
-﻿using DinoDiner.Menu.SizeEnum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Drinks
+    public abstract class Drink
     {
         private SodasuarusFlavor flavor;
         public SodasuarusFlavor Flavor
@@ -38,7 +37,7 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public virtual Size Size { get; set; }
 
-        public Boolean Ice { get; set; } = true;
+        public bool Ice { get; set; } = true;
 
         public void HoldIce()
         {

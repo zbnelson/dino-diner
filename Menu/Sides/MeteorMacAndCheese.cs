@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.SizeEnum;
 
 namespace DinoDiner.Menu.Sides
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.SizeEnum;
+using DinoDiner.Menu;
 using Xunit;
 
 namespace MenuTest.Drinks
@@ -131,6 +131,15 @@ namespace MenuTest.Drinks
             Sodasuarus soda = new Sodasuarus();
             soda.HoldIce();
             Assert.False(soda.Ice);
+        }
+        [Fact]
+        public void ShouldHaveCorrectIngredients()
+        {
+            Sodasuarus soda = new Sodasuarus();
+            Assert.Contains<string>("Water", soda.Ingredients);
+            Assert.Contains<string>("Natural Flavors", soda.Ingredients);
+            Assert.Contains<string>("Cane Sugar", soda.Ingredients);
+            Assert.Equal<int>(3, soda.Ingredients.Count);
         }
 
 

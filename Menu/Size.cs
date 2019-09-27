@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.SizeEnum
+namespace DinoDiner.Menu
 {
     public enum Size
     {
