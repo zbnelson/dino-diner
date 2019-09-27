@@ -1,9 +1,15 @@
-﻿using System;
+﻿/*  tyrannotea.cs
+*   Author: Zachary Nelson
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Defines properties for TyrannoTea
+    /// </summary>
     public class Tyrannotea : Drink
     {
         /// <summary>
@@ -15,7 +21,7 @@ namespace DinoDiner.Menu.Drinks
         public bool Sweet { get; set; } = false;
 
         /// <summary>
-        /// 
+        /// Sets the pice and calories based on size of the drink
         /// </summary>
         public override Size Size
         {
@@ -42,12 +48,18 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// adds Lemon to the drink and ingredients
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;
             ingredients.Add("Lemon");
         }
 
+        /// <summary>
+        /// Uses sweet to determine if it needs to add sweetener or remove sweetener. Changes calories and ingredients based on that.
+        /// </summary>
         public void AddSweetener()
         {
             if (Sweet == false)
@@ -65,6 +77,9 @@ namespace DinoDiner.Menu.Drinks
 
         }
 
+        /// <summary>
+        /// uses the size to find price and calories, then adds the ingredients to the ingredients list
+        /// </summary>
         public Tyrannotea()
         {
             Size = Size.Small;

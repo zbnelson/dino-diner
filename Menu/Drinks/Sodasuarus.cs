@@ -1,18 +1,24 @@
-﻿using System;
+﻿/*  Sodasuarus.cs
+*   Author: Zachary Nelson
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Defines properties for Sodasuarus
+    /// </summary>
     public class Sodasuarus : Drink
     {
         /// <summary>
         /// Holds the size of the side
         /// </summary>
         private Size size;
-        
+
         /// <summary>
-        /// 
+        /// Sets the pice and calories based on size of the drink
         /// </summary>
         public override Size Size {
             get { return size; }
@@ -37,6 +43,10 @@ namespace DinoDiner.Menu.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// uses the size to find price and calories, then adds the ingredients to the ingredients list
+        /// </summary>
         public Sodasuarus()
         {
             Size = Size.Small;
