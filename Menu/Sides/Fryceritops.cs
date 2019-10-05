@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Fryceritops : Side
     {
@@ -53,6 +53,15 @@ namespace DinoDiner.Menu.Sides
             ingredients.Add("Potato");
             ingredients.Add("Salt");
             ingredients.Add("Vegetable Oil");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to correctly return the string including the name
+        /// </summary>
+        /// <returns>Side name</returns>
+        public override string ToString()
+        {
+            return $"{size} Friceritops";
         }
     }
 }

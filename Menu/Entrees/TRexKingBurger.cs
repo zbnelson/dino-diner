@@ -3,7 +3,7 @@
 */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class TRexKingBurger : Entree
     {
@@ -123,6 +123,15 @@ namespace DinoDiner.Menu.Entrees
         public void HoldTomato()
         {
             this.tomato = false;
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to correctly return the string including the name
+        /// </summary>
+        /// <returns>Entree name</returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

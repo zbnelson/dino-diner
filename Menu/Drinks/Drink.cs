@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
-        private SodasuarusFlavor flavor;
-        public SodasuarusFlavor Flavor
-        {
-            get { return flavor; }
-            set { flavor = value; }
-        }
 
         protected List<string> ingredients = new List<string>();
         /// <summary>
@@ -29,7 +23,7 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public List<string> Ingredients
         {
-            get { return ingredients; }
+            get { return new List<string>(ingredients); }
         }
 
         /// <summary>
@@ -39,9 +33,13 @@ namespace DinoDiner.Menu.Drinks
 
         public bool Ice { get; set; } = true;
 
+        /// <summary>
+        /// sets ice to false if it is not wanted
+        /// </summary>
         public void HoldIce()
         {
             Ice = false;
         }
+
     }
 }

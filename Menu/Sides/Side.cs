@@ -6,12 +6,12 @@ using System.Collections.Generic;
 using DinoDiner.Menu;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// class that gets/sets the price, calories and ingredients list for sides.
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         protected List<string> ingredients = new List<string>();
         /// <summary>
@@ -28,7 +28,7 @@ namespace DinoDiner.Menu.Sides
         /// Gets the ingredients list
         /// </summary>
         public List<string> Ingredients {
-            get {return ingredients;}
+            get {return new List<string>(ingredients);}
         }
 
         /// <summary>

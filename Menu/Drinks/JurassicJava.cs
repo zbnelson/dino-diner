@@ -6,12 +6,12 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Defines properties for JurrasicJava
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// Holds the size of the side
@@ -77,13 +77,25 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// uses the size to find price and calories, then adds the ingredients to the ingredients list and sets ice to false by default;
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             Ice = false;
             Size = Size.Small;
             ingredients.Add("Water");
             ingredients.Add("Coffee");
 
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to correctly return the string including the size and name
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (!Decaf)
+                return $"{size} Jurassic Java";
+            else
+                return $"{size} Decaf Jurassic Java";
         }
     }
 }

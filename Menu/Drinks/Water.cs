@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Defines properties for Water
@@ -50,6 +50,15 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true;
             ingredients.Add("Lemon");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to correctly return the string including the size and name
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{size} Water";
         }
     }
 }

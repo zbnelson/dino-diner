@@ -5,13 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Defines properties for Sodasuarus
     /// </summary>
-    public class Sodasuarus : Drink
+    public class Sodasaurus : Drink
     {
+        public SodasaurusFlavor Flavor { get; set; }
         /// <summary>
         /// Holds the size of the side
         /// </summary>
@@ -47,12 +48,17 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// uses the size to find price and calories, then adds the ingredients to the ingredients list
         /// </summary>
-        public Sodasuarus()
+        public Sodasaurus()
         {
             Size = Size.Small;
             ingredients.Add("Water");
             ingredients.Add("Natural Flavors");
             ingredients.Add("Cane Sugar");
+        }
+
+        public override string ToString()
+        {
+            return $"{size} {Flavor} Sodasaurus";
         }
     }
 }

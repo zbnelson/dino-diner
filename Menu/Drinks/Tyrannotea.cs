@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Defines properties for TyrannoTea
@@ -84,7 +84,19 @@ namespace DinoDiner.Menu.Drinks
         {
             Size = Size.Small;
             ingredients.Add("Water");
-            Ingredients.Add("Tea");
+            ingredients.Add("Tea");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to correctly return the string including the size and name
+        /// </summary>
+        /// <returns>drink name</returns>
+        public override string ToString()
+        {
+            if (!Sweet)
+                return $"{size} Tyrannotea";
+            else
+                return $"{size} Sweet Tyrannotea";
         }
     }
 }
