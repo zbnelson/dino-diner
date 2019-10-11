@@ -17,7 +17,18 @@
                 <Setter Property="BorderThickness" Value="2"/>
             </Style>
         </WrapPanel.Resources>
-        <Button>Brontwurst Combo</Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-01.png" Height="69"/>
+                <TextBlock><Run Text="Brontowurst Combo"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-02.png" Height="69"/>
+                <TextBlock>Dino-Nuggets Combo</TextBlock>
+            </StackPanel>
+        </Button>
         <Button>Dino-Nuggets Combo</Button>
         <Button>Steakosaurus Combo</Button>
         <Button>T-Rex King Burger Combo</Button>
