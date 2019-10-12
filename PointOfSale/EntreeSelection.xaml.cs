@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*  EntreeSelection.xaml.cs
+*   Author: Zachary Nelson
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +23,19 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// Constructor for EntreeSelection.xaml
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click action to navigate to MenuCategorySelection.xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void SelectBack(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new MenuCategorySelection());

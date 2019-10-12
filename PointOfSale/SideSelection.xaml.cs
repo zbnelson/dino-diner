@@ -20,6 +20,9 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        /// <summary>
+        /// Constructor for SideSelection.xaml
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
