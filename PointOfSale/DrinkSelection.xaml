@@ -7,8 +7,67 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DrinkSelection">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Add To Order</TextBlock>
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="3"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="TextBlock.FontSize" Value="12"/>
+                    <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Center">Drink</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" TextAlignment="Center">Size</TextBlock>
+            <TextBlock Grid.Column="2" Grid.Row="0" TextAlignment="Center">Special</TextBlock>
 
-    <Grid>
-        
-    </Grid>
+            <Button Click="SelectSoda" Grid.Column="0" Grid.Row="1">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-14.png" Height="60"/>
+                    <TextBlock>SodaSaurus</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectTea" Grid.Column="0" Grid.Row="2">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-12.png" Height="60"/>
+                    <TextBlock>TyrannoTea</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectJava" Grid.Column="0" Grid.Row="3">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-13.png" Height="60"/>
+                    <TextBlock>Jurassic Java</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectWater" Grid.Column="0" Grid.Row="4">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-15.png" Height="60"/>
+                    <TextBlock>Water</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="1">Small</Button>
+            <Button Grid.Column="1" Grid.Row="2">Medium</Button>
+            <Button Grid.Column="1" Grid.Row="3">Large</Button>
+            <Button Name="Flavor" Click="SelectFlavor" Grid.Column="2" Grid.Row="1">Sweet/Decaf/Flavor</Button>
+            <Button Name="Lemon" Grid.Column="2" Grid.Row="2">Add Lemon</Button>
+            <Button Name="Ice" Grid.Column="2" Grid.Row="3">Hold Ice</Button>
+            <Button Grid.Column="2" Grid.Row="4" FontSize ="20" FontWeight="Bold" Background="SkyBlue">Back</Button>
+        </Grid>
+    </DockPanel>
+
 </Page>

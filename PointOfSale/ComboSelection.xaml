@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ComboSelection">
-    
+
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
@@ -15,26 +15,51 @@
                 <Setter Property="MinHeight" Value="120"/>
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="FontWeight" Value="Bold"/>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="SelectCustomize">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-01.png" Height="69"/>
                 <TextBlock><Run Text="Brontowurst Combo"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="SelectCustomize">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png" Height="69"/>
                 <TextBlock>Dino-Nuggets Combo</TextBlock>
             </StackPanel>
         </Button>
-        <Button>Dino-Nuggets Combo</Button>
-        <Button>Steakosaurus Combo</Button>
-        <Button>T-Rex King Burger Combo</Button>
-        <Button>Prehistoric PB&amp;J Combo</Button>
-        <Button>Pterodactly Wings Combo</Button>
-        <Button>Veloci-Wrap Combo</Button>
+        <Button Click="SelectCustomize">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-05.png" Height="69"/>
+                <TextBlock><Run Text="Steakosaurus Combo"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectCustomize">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-06.png" Height="69"/>
+                <TextBlock><Run Text="T-Rex King Burger Combo"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectCustomize">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-03.png" Height="69"/>
+                <TextBlock><Run Text="Prehistoric PB&amp;J Combo"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectCustomize">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-04.png" Height="69"/>
+                <TextBlock><Run Text="Pterodactly Wings Combo"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectCustomize">
+            <StackPanel>
+                <Image Width="100" Source="Assets/DinoDiner-07.png" Height="69"/>
+                <TextBlock><Run Text="Veloci-Wrap Combo"/></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectBack" FontSize ="20" Background="SkyBlue">Back</Button>
     </WrapPanel>
-    
 </Page>

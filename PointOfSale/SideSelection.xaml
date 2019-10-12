@@ -8,7 +8,62 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SideSelection">
 
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Add To Order</TextBlock>
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="3"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="TextBlock.FontSize" Value="14"/>
+                    <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Center">Side</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" TextAlignment="Center">Size</TextBlock>
+
+            <Button Grid.Column="0" Grid.Row="1">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-08.png" Height="60"/>
+                    <TextBlock>Fryceritops</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="2">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-09.png" Height="60"/>
+                    <TextBlock>Meteor Mac &amp; Cheese</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="3">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-10.png" Height="60"/>
+                    <TextBlock>Mezzorella Sticks</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="4">
+                <StackPanel>
+                    <Image Width="100" Source="Assets/DinoDiner-11.png" Height="60"/>
+                    <TextBlock>Triceritots</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="1">Small</Button>
+            <Button Grid.Column="1" Grid.Row="2">Medium</Button>
+            <Button Grid.Column="1" Grid.Row="3">Large</Button>
+            <Button Grid.Column="2" Grid.Row="4" FontSize ="20" FontWeight="Bold" Background="SkyBlue">Back</Button>
+        </Grid>
+    </DockPanel>
+
 </Page>

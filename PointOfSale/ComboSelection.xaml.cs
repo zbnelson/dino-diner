@@ -24,5 +24,14 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        void SelectCustomize(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeComboSelection());
+        }
+
+        void SelectBack(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }
