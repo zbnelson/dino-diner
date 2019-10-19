@@ -74,6 +74,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets pickle to false if it's not included
@@ -81,6 +83,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets ketchup to false if it's not included
@@ -88,6 +92,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets mustard to false if it's not included
@@ -95,6 +101,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets mayo to false if it's not included
@@ -102,6 +110,8 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.mayo = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets onion to false if it's not included
@@ -109,6 +119,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets lettuce to false if it's not included
@@ -116,6 +128,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets tomato to false if it's not included
@@ -123,6 +137,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -132,6 +148,34 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "T-Rex King Burger";
+        }
+
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun)
+                    special.Add("Hold Bun");
+                if (!pickle)
+                    special.Add("Hold Pickles");
+                if (!ketchup)
+                    special.Add("Hold Ketchup");
+                if (!mustard)
+                    special.Add("Hold Mustard");
+                if (!mayo)
+                    special.Add("Hold Mayonnaise");
+                if (!onion)
+                    special.Add("Hold Onions");
+                if (!lettuce)
+                    special.Add("Hold Lettuce");
+                if (!tomato)
+                    special.Add("Hold Tomato");
+                return special.ToArray();
+            }
         }
     }
 }

@@ -45,6 +45,9 @@ namespace DinoDiner.Menu
             this.Price = Price + .25;
             this.Calories = Calories + 59;
             nuggetCount = nuggetCount + 1;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Price");
+            NotifyOfPropertyChanged("Calories");
         }
 
         /// <summary>
@@ -54,6 +57,22 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Dino-Nuggets";
+        }
+
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (nuggetCount > 6)
+                {
+                    special.Add($"{nuggetCount - 6} Extra Nuggets");
+                }
+                return special.ToArray();
+            }
         }
 
     }

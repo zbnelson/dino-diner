@@ -27,10 +27,16 @@ namespace DinoDiner.Menu
         /// </summary>
         public override Size Size
         {
-            get { return size; }
+            get
+            {
+                return size;
+            }
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
                 switch (size)
                 {
                     case Size.Small:
@@ -56,6 +62,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -64,6 +71,7 @@ namespace DinoDiner.Menu
         public void MakeDecaf()
         {
             Decaf = true;
+            NotifyOfPropertyChanged("Description");
         }
 
         /// <summary>
@@ -72,6 +80,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -89,13 +99,33 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides the ToString method to correctly return the string including the size and name
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public override string ToString()
         {
             if (!Decaf)
                 return $"{size} Jurassic Java";
             else
                 return $"{size} Decaf Jurassic Java";
+        }
+
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Ice)
+                {
+                    special.Add("Add Ice");
+                }
+                if (RoomForCream)
+                {
+                    special.Add("Leave Room for Cream");
+                }
+                return special.ToArray();
+            }
         }
     }
 }

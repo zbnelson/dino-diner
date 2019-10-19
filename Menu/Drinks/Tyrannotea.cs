@@ -25,10 +25,16 @@ namespace DinoDiner.Menu
         /// </summary>
         public override Size Size
         {
-            get { return size; }
+            get
+            {
+                return size;
+            }
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
                 switch (size)
                 {
                     case Size.Small:
@@ -55,6 +61,8 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -74,6 +82,7 @@ namespace DinoDiner.Menu
                 Calories /= 2;
                 ingredients.Remove("Cane Sugar");
             }
+            NotifyOfPropertyChanged("Description");
 
         }
 
@@ -97,6 +106,26 @@ namespace DinoDiner.Menu
                 return $"{size} Tyrannotea";
             else
                 return $"{size} Sweet Tyrannotea";
+        }
+
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice)
+                {
+                    special.Add("Hold Ice");
+                }
+                if (Lemon)
+                {
+                    special.Add("Add Lemon");
+                }
+                return special.ToArray();
+            }
         }
     }
 }

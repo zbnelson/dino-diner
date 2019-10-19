@@ -1,10 +1,15 @@
-﻿using System;
+﻿/* CretaceousComboTest.cs
+*  Author: Zachary Nelson
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Xunit;
 
 namespace MenuTest
 {
-    class CretaceousComboTest
+    public class CretaceousComboTest
     {
+
     }
 }

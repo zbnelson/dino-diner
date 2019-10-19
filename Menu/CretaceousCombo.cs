@@ -82,6 +82,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// gets price of all items in combo plus .25
+        /// </summary>
         public double Price
         {
             get
@@ -90,6 +93,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// gets calories of all items in combo
+        /// </summary>
         public uint Calories
         {
             get
@@ -103,7 +109,9 @@ namespace DinoDiner.Menu
         private Size size = Size.Small;
 
         
-
+        /// <summary>
+        /// gets and sets size for all items in combo
+        /// </summary>
         public Size Size
         {
             get
@@ -118,6 +126,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// creates a list of all ingredients in combo
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -150,6 +161,9 @@ namespace DinoDiner.Menu
             return $"{Entree} Combo"; ;
         }
 
+        /// <summary>
+        /// gets the description of the entree by calling the overrided ToString method
+        /// </summary>
         public string Description
         {
             get 
@@ -158,6 +172,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
         public string[] Special
         {
             get
@@ -167,7 +184,7 @@ namespace DinoDiner.Menu
                 special.Add(Side.Description);
                 special.AddRange(Side.Special);
                 special.Add(Drink.Description);
-                special.Add(Drink.Special);
+                special.AddRange(Drink.Special);
                 return special.ToArray();
             }
         }

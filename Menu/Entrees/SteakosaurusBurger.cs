@@ -54,6 +54,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets pickle to false if it's not included
@@ -61,6 +63,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets ketchup to false if it's not included
@@ -68,6 +72,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// sets mustard to false if it's not included
@@ -75,6 +81,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -84,6 +92,26 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Steakosaurus Burger";
+        }
+
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun)
+                    special.Add("Hold Bun");
+                if (!pickle)
+                    special.Add("Hold Pickles");
+                if (!ketchup)
+                    special.Add("Hold Ketchup");
+                if (!mustard)
+                    special.Add("Hold Mustard");
+                return special.ToArray();
+            }
         }
     }
 }

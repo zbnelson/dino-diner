@@ -209,5 +209,90 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Lemon", tea.Ingredients);
             Assert.Equal<int>(4, tea.Ingredients.Count);
         }
+
+        [Fact]
+        public void SpecialShouldBeEmptyByDefault()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.Empty(tea.Special);
+        }
+
+        [Fact]
+        public void HoldIceShouldAddToSpecial()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.HoldIce();
+            Assert.Collection<string>(tea.Special, item =>
+            {
+                Assert.Equal("Hold Ice", item);
+            });
+        }
+
+        [Fact]
+        public void AddLemonShouldAddToSpecial()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            Assert.Collection<string>(tea.Special, item =>
+            {
+                Assert.Equal("Add Lemon", item);
+            });
+        }
+
+        [Fact]
+        public void HoldAllShouldAddAllToSpecial()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.HoldIce();
+            tea.AddLemon();
+            Assert.Collection<string>(tea.Special, item =>
+            {
+                Assert.Equal("Hold Ice", item);
+            },
+            item =>
+            {
+                Assert.Equal("Add Lemon", item);
+            });
+        }
+
+        [Fact]
+        public void HoldIceShouldNotifySpecialChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special", () =>
+            {
+                tea.HoldIce();
+            });
+        }
+
+        [Fact]
+        public void AddLemonShouldNotifySpecialChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special", () =>
+            {
+                tea.AddLemon();
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyPriceChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Price", () =>
+            {
+                tea.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifyCaloriesChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Calories", () =>
+            {
+                tea.Size = Size.Large;
+            });
+        }
     }
 }

@@ -9,23 +9,14 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Defines properties for PrehistoricPBJ
     /// </summary>
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree
     { 
         private bool peanutButter = true;
         private bool jelly = true;
 
-        /// <summary>
-        /// An event handler for PropertyChanged events for Special and Ingredients
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
-        /// 
+        /// returns a list of ingredients in a PB&J
         /// </summary>
         public override List<string> Ingredients
         {
@@ -77,17 +68,9 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// gets the description of the entree by calling the overrided ToString method
-        /// </summary>
-        public string Description
-        {
-            get { return this.ToString(); }
-        }
-
-        /// <summary>
         /// adds the special menu instructions to a list and returns the list as an array.
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

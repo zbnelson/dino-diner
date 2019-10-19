@@ -22,10 +22,16 @@ namespace DinoDiner.Menu
         /// Sets the pice and calories based on size of the drink
         /// </summary>
         public override Size Size {
-            get { return size; }
+            get
+            {
+                return size;
+            }
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
                 switch (size)
                 {
                     case Size.Small:
@@ -56,9 +62,29 @@ namespace DinoDiner.Menu
             ingredients.Add("Cane Sugar");
         }
 
+        /// <summary>
+        /// Overrides the ToString method to correctly return the string including the size and name
+        /// </summary>
+        /// <returns>string</returns>
         public override string ToString()
         {
             return $"{size} {Flavor} Sodasaurus";
+        }
+
+        /// <summary>
+        /// adds the special menu instructions to a list and returns the list as an array.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice)
+                {
+                    special.Add("Hold Ice");
+                }
+                return special.ToArray();
+            }
         }
     }
 }
