@@ -40,7 +40,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size {
+            get { return Size; }
+            set
+            {
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         public bool Ice { get; set; } = true;
 

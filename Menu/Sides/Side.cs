@@ -46,7 +46,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size {
+            get { return Size; }
+            set
+            {
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// gets the description of the entree by calling the overrided ToString method
