@@ -12,7 +12,22 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Sodasaurus : Drink
     {
-        public SodasaurusFlavor Flavor { get; set; }
+        /// <summary>
+        /// backing variable for flavor of soda
+        /// </summary>
+        private SodasaurusFlavor flavor;
+        
+        /// <summary>
+        /// get set for soda flavor
+        /// </summary>
+        public SodasaurusFlavor Flavor {
+            get { return flavor; }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
         /// <summary>
         /// Holds the size of the side
         /// </summary>
@@ -29,10 +44,6 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("Size");
-                NotifyOfPropertyChanged("Description");
                 switch (size)
                 {
                     case Size.Small:
@@ -49,6 +60,10 @@ namespace DinoDiner.Menu
                         break;
                     default: break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
             }
         }
 

@@ -23,13 +23,13 @@
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button>Cherry</Button>
-            <Button>Chocolate</Button>
-            <Button>Cola</Button>
-            <Button>Lime</Button>
-            <Button>Orange</Button>
-            <Button>Root Beer</Button>
-            <Button>Vanilla</Button>
+            <Button Click="OnCherryClick">Cherry</Button>
+            <Button Click="OnChocolateClick">Chocolate</Button>
+            <Button Click="OnColaClick">Cola</Button>
+            <Button Click="OnLimeClick">Lime</Button>
+            <Button Click="OnOrangeClick">Orange</Button>
+            <Button Click="OnRootBeerClick">Root Beer</Button>
+            <Button Click="OnVanillaClick">Vanilla</Button>
             <Button Background="SkyBlue">Back</Button>
         </WrapPanel>
     </DockPanel>

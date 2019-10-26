@@ -60,13 +60,13 @@
                     <TextBlock>Water</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="1" Grid.Row="1">Small</Button>
-            <Button Grid.Column="1" Grid.Row="2">Medium</Button>
-            <Button Grid.Column="1" Grid.Row="3">Large</Button>
+            <Button Tag ="Small" Grid.Column="1" Grid.Row="1" Click="OnChangeSize">Small</Button>
+            <Button Tag ="Medium" Grid.Column="1" Grid.Row="2" Click="OnChangeSize">Medium</Button>
+            <Button Tag ="Large" Grid.Column="1" Grid.Row="3" Click="OnChangeSize">Large</Button>
             <Button Name="Flavor" Click="SelectFlavor" Grid.Column="2" Grid.Row="1">Sweet/Decaf/Flavor</Button>
-            <Button Name="Lemon" Grid.Column="2" Grid.Row="2">Add Lemon</Button>
-            <Button Name="Ice" Grid.Column="2" Grid.Row="3">Hold Ice</Button>
-            <Button Grid.Column="2" Grid.Row="4" FontSize ="20" FontWeight="Bold" Background="SkyBlue">Back</Button>
+            <Button Click="OnLemonClick" Name="Lemon" Grid.Column="2" Grid.Row="2">Add Lemon</Button>
+            <Button Click="OnIceClick" Name="Ice" Grid.Column="2" Grid.Row="3">Hold Ice</Button>
+            <Button Click="OnDoneClick" Grid.Column="2" Grid.Row="4" FontSize ="20" FontWeight="Bold" Background="SkyBlue">Done</Button>
         </Grid>
     </DockPanel>
 

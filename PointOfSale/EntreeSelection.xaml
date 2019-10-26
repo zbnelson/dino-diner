@@ -23,43 +23,43 @@
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button>
+            <Button Click="OnBrontowurstClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-01.png" Height="90"/>
                     <TextBlock>Brontowurst</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button Click="OnDinoNuggetClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-02.png" Height="90"/>
                     <TextBlock>Dino-Nuggets</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button Click="OnSteakosaurusBurgerClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-05.png" Height="90"/>
                     <TextBlock>Steakosaurus</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button Click="OnTrexKingBurgerClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-06.png" Height="90"/>
                     <TextBlock>T-Rex King Burger</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button Click="OnPrehistoricPBJClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-03.png" Height="90"/>
                     <TextBlock>Prehistoric PB&amp;J</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button Click="OnPterodactylWingsClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-04.png" Height="90"/>
                     <TextBlock>Pterodactly Wings</TextBlock>
                 </StackPanel>
             </Button>
-            <Button>
+            <Button Click="OnVelociWrapClick">
                 <StackPanel>
                     <Image Width="100" Source="Assets/DinoDiner-07.png" Height="90"/>
                     <TextBlock>Veloci-Wrap</TextBlock>

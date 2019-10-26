@@ -3,6 +3,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using DinoDiner.Menu;
 
@@ -15,6 +16,9 @@ namespace MenuTest
         public string Description { get; set; }
 
         public string[] Special { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public class Mockitem1 : IOrderItem
         {
             public double Price { get; set; } = 4.50;
@@ -29,6 +33,7 @@ namespace MenuTest
             {
                 this.Price = price;
             }
+            public event PropertyChangedEventHandler PropertyChanged;
         }
 
         public class Mockitem2 : IOrderItem
@@ -45,6 +50,7 @@ namespace MenuTest
             {
                 this.Price = price;
             }
+            public event PropertyChangedEventHandler PropertyChanged;
         }
 
         public class Mockitem3 : IOrderItem
@@ -61,6 +67,7 @@ namespace MenuTest
             {
                 this.Price = price;
             }
+            public event PropertyChangedEventHandler PropertyChanged;
         }
 
     }

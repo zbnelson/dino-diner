@@ -20,11 +20,18 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Order" FontWeight="Bold" TextAlignment="Right"/>
         <TextBlock Text="#" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Margin="5,0,0,0"/>
-        <ListBox Name="OrderItems" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items,UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True">
+        <ListBox SelectionChanged="OnSelectionChanged" Name="OrderItems" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items,UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
+                    <StackPanel MinWidth="185">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="15"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <Button Grid.Column="1" Click="RemoveItem" Background="Red" Foreground="White">X</Button>
+                        </Grid>
                         <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                     </StackPanel>
                 </DataTemplate>
