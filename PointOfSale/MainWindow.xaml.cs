@@ -31,13 +31,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             Order order = new Order();
-            //order.Items.Add(new PrehistoricPBJ());
-            //order.Items.Add(new Sodasaurus());
-            //order.Items.Add(new Fryceritops());
-            //SteakosaurusBurger sb = new SteakosaurusBurger();
-            //sb.HoldPickle();
-            //sb.HoldMustard();
-            //order.Items.Add(sb);
             DataContext = order;
             OrderUI.Navigate(new MenuCategorySelection());
             OrderInterface.NavigationService = OrderUI.NavigationService;
@@ -62,6 +55,11 @@ namespace PointOfSale
         private void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
             PassDataContentToPage();
+        }
+
+        private void OnReturnToCategorySelection(object sender, RoutedEventArgs args)
+        {
+            OrderUI.NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>

@@ -27,14 +27,6 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        //private void OnSelectionChanged(object sender, EventArgs args)
-        //{
-        //    if(OrderItems.SelectedItem is Side)
-        //    {
-
-        //    }
-        //}
-
             /// <summary>
             ///  removes an item from order
             /// </summary>
@@ -59,7 +51,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+        private void OnSelectionChanged(object sender, EventArgs args)
         {
             if(OrderItems.SelectedItem is Side side)
             {
