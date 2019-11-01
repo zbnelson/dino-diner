@@ -15,8 +15,8 @@ namespace MenuTest
         public void SubtotalCostShouldNotBeNegative()
         {
             Order order = new Order();
-            order.Items.Add(new OrderMockItems.Mockitem1());
-            order.Items.Add(new OrderMockItems.Mockitem2());
+            order.Add(new OrderMockItems.Mockitem1());
+            order.Add(new OrderMockItems.Mockitem2());
             Assert.Equal<double>(0, order.SubtotalCost);
         }
 
@@ -24,8 +24,8 @@ namespace MenuTest
         public void SubtotalCostShouldBePositive()
         {
             Order order = new Order();
-            order.Items.Add(new OrderMockItems.Mockitem1());
-            order.Items.Add(new OrderMockItems.Mockitem3());
+            order.Add(new OrderMockItems.Mockitem1());
+            order.Add(new OrderMockItems.Mockitem3());
             Assert.Equal<double>(6, order.SubtotalCost);
         }
     }
