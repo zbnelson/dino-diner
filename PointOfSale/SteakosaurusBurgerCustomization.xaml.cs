@@ -1,4 +1,4 @@
-﻿/*  BrontowurstCustomization.xaml.cs
+﻿/*  SteakosaurusBurgerCustomization.xaml.cs
 *   Author: Zachary Nelson
 */
 using DinoDiner.Menu;
@@ -20,67 +20,75 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for BrontowurstCustomization.xaml
+    /// Interaction logic for SteakosaurusBurgerCustomization.xaml
     /// </summary>
-    public partial class BrontowurstCustomization : Page
+    public partial class SteakosaurusBurgerCustomization : Page
     {
         private bool isCombo = false;
-
-        private CretaceousCombo combo;
         /// <summary>
-        /// private holder for brontowurst
+        /// private backing variable for steakosaurusburger
         /// </summary>
-        private Brontowurst b;
+        private SteakosaurusBurger burger;
 
         /// <summary>
-        /// constructor for brontowurst
+        /// constructor for steakosaurusburgercustomization
         /// </summary>
-        /// <param name="brontowurst"></param>
-        public BrontowurstCustomization(Brontowurst brontowurst)
+        /// <param name="b"></param>
+        public SteakosaurusBurgerCustomization(SteakosaurusBurger b)
         {
             InitializeComponent();
-            b = brontowurst;
+            burger = b;
         }
 
-        public BrontowurstCustomization(Brontowurst brontowurst, bool comboBool)
+        public SteakosaurusBurgerCustomization(SteakosaurusBurger b, bool combo)
         {
             InitializeComponent();
-            b = brontowurst;
-            isCombo = comboBool;
+            burger = b;
+            isCombo = combo;
         }
 
         /// <summary>
-        /// holds onion from brontowurst object
+        /// holds pickles from steakosaurusburger object
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldOnionClick(object sender, RoutedEventArgs e)
+        private void OnHoldPickleClick(object sender, RoutedEventArgs e)
         {
-            b.HoldOnion();
+            burger.HoldPickle();
         }
 
         /// <summary>
-        /// holds Peppers from brontowurst object
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnHoldPepperClick(object sender, RoutedEventArgs e)
-        {
-            b.HoldPeppers();
-        }
-
-        /// <summary>
-        /// holds bun from brontowurst object
+        /// holds bun from steakosaurusburger object
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void OnHoldBunClick(object sender, RoutedEventArgs e)
         {
-            b.HoldBun();
+            burger.HoldBun();
         }
 
         /// <summary>
-        /// navigates to menuselection when done with brontowurst customization
+        /// holds ketchup from steakosaurusburger object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHoldKethcupClick(object sender, RoutedEventArgs e)
+        {
+            burger.HoldKetchup();
+        }
+
+        /// <summary>
+        /// holds mustard from steakosaurusburger object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHoldMustardClick(object sender, RoutedEventArgs e)
+        {
+            burger.HoldMustard();
+        }
+
+        /// <summary>
+        /// navigates to menuselection when done with nugget customization
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

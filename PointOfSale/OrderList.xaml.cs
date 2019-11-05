@@ -63,9 +63,44 @@ namespace PointOfSale
                 NavigationService?.Navigate(new DrinkSelection(drink));
             }
 
-            if (OrderItems.SelectedItem is Entree entree)
+            if (OrderItems.SelectedItem is DinoNuggets nug)
             {
-                NavigationService?.Navigate(new EntreeSelection(entree));
+                NavigationService?.Navigate(new DinoNuggetCustomization(nug));
+            }
+
+            if (OrderItems.SelectedItem is Brontowurst b)
+            {
+                NavigationService?.Navigate(new BrontowurstCustomization(b));
+            }
+
+            if (OrderItems.SelectedItem is PrehistoricPBJ pbj)
+            {
+                NavigationService?.Navigate(new PBJCustomization(pbj));
+            }
+
+            if (OrderItems.SelectedItem is SteakosaurusBurger burger)
+            {
+                NavigationService?.Navigate(new SteakosaurusBurgerCustomization(burger));
+            }
+
+            if (OrderItems.SelectedItem is TRexKingBurger tb)
+            {
+                NavigationService?.Navigate(new TRexKingBurgerCustomization(tb));
+            }
+
+            if (OrderItems.SelectedItem is VelociWrap wrap)
+            {
+                NavigationService?.Navigate(new VelociWrapCustomization(wrap));
+            }
+
+            if (OrderItems.SelectedItem is PterodactylWings wings)
+            {
+                NavigationService?.Navigate(new EntreeSelection(wings));
+            }
+
+            if (OrderItems.SelectedItem is CretaceousCombo combo)
+            {
+                NavigationService?.Navigate(new CustomizeComboSelection(combo));
             }
         }
     }

@@ -22,6 +22,8 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+
+        private CretaceousCombo combo;
         private Side side;
         /// <summary>
         /// Constructor for SideSelection.xaml
@@ -29,6 +31,12 @@ namespace PointOfSale
         public SideSelection()
         {
             InitializeComponent();
+        }
+
+        public SideSelection(CretaceousCombo c)
+        {
+            InitializeComponent();
+            combo = c;
         }
 
         /// <summary>
@@ -52,11 +60,19 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectFryceritops(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo == null)
             {
-                side = new Fryceritops();
-                order.Add(side);
+                if (DataContext is Order order)
+                {
+                    side = new Fryceritops();
+                    order.Add(side);
+                }
             }
+            else
+            {
+                combo.Side = new Fryceritops();
+            }
+
         }
 
         /// <summary>
@@ -66,10 +82,17 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo == null)
             {
-                side = new MeteorMacAndCheese();
-                order.Add(side);
+                if (DataContext is Order order)
+                {
+                    side = new MeteorMacAndCheese();
+                    order.Add(side);
+                }
+            }
+            else
+            {
+                combo.Side = new MeteorMacAndCheese();
             }
         }
 
@@ -80,10 +103,17 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo == null)
             {
-                side = new MezzorellaSticks();
-                order.Add(side);
+                if (DataContext is Order order)
+                {
+                    side = new MezzorellaSticks();
+                    order.Add(side);
+                }
+            }
+            else
+            {
+                combo.Side = new MezzorellaSticks();
             }
         }
 
@@ -94,10 +124,17 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectTriceritots(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if (combo == null)
             {
-                side = new Triceritots();
-                order.Add(side);
+                if (DataContext is Order order)
+                {
+                    side = new Triceritots();
+                    order.Add(side);
+                }
+            }
+            else
+            {
+                combo.Side = new Triceritots();
             }
         }
 
@@ -108,15 +145,36 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
-            if(side == null)
+            if (combo == null)
             {
-                return;
+                if (side == null)
+                {
+                    return;
+                }
+                if (sender is FrameworkElement element)
+                {
+                    side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
             }
-            if(sender is FrameworkElement element)
+            else
             {
-                side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
-                NavigationService.Navigate(new MenuCategorySelection());
+                if (sender is FrameworkElement element)
+                {
+                    combo.Side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                    NavigationService.Navigate(new CustomizeComboSelection(combo));
+                }
             }
+        }
+
+        /// <summary>
+        /// onclick event to navigate back a page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnBackClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

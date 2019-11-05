@@ -1,4 +1,4 @@
-﻿/*  BrontowurstCustomization.xaml.cs
+﻿/*  VelociWrapCustomization.xaml.cs
 *   Author: Zachary Nelson
 */
 using DinoDiner.Menu;
@@ -20,67 +20,72 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for BrontowurstCustomization.xaml
+    /// Interaction logic for VelociWrapCustomization.xaml
     /// </summary>
-    public partial class BrontowurstCustomization : Page
+    public partial class VelociWrapCustomization : Page
     {
+
         private bool isCombo = false;
-
-        private CretaceousCombo combo;
         /// <summary>
-        /// private holder for brontowurst
+        /// private backing variable for velociwrap
         /// </summary>
-        private Brontowurst b;
+        private VelociWrap wrap;
 
         /// <summary>
-        /// constructor for brontowurst
+        /// constructor for VelociwrapCustomization
         /// </summary>
-        /// <param name="brontowurst"></param>
-        public BrontowurstCustomization(Brontowurst brontowurst)
+        /// <param name="v">velociwrap</param>
+        public VelociWrapCustomization(VelociWrap v)
         {
             InitializeComponent();
-            b = brontowurst;
+            wrap = v;
         }
 
-        public BrontowurstCustomization(Brontowurst brontowurst, bool comboBool)
+        public VelociWrapCustomization(VelociWrap v, bool combo)
         {
             InitializeComponent();
-            b = brontowurst;
-            isCombo = comboBool;
+            wrap = v;
+            isCombo = combo;
+        }
+
+        public VelociWrapCustomization(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            wrap = (VelociWrap)combo.Entree;
         }
 
         /// <summary>
-        /// holds onion from brontowurst object
+        /// onclick event for holding lettuce
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldOnionClick(object sender, RoutedEventArgs e)
+        private void OnHoldlettuceClick(object sender, RoutedEventArgs e)
         {
-            b.HoldOnion();
+            wrap.HoldLettuce();
         }
 
         /// <summary>
-        /// holds Peppers from brontowurst object
+        /// onclick event for holding Dressing
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldPepperClick(object sender, RoutedEventArgs e)
+        private void OnHoldDressingClick(object sender, RoutedEventArgs e)
         {
-            b.HoldPeppers();
+            wrap.HoldDressing();
         }
 
         /// <summary>
-        /// holds bun from brontowurst object
+        /// onclick event for holding Cheese
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldBunClick(object sender, RoutedEventArgs e)
+        private void OnHoldCheeseClick(object sender, RoutedEventArgs e)
         {
-            b.HoldBun();
+            wrap.HoldCheese();
         }
 
         /// <summary>
-        /// navigates to menuselection when done with brontowurst customization
+        /// navigates to menuselection when done with nugget customization
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

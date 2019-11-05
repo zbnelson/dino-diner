@@ -1,4 +1,4 @@
-﻿<Page x:Class="PointOfSale.BrontowurstCustomization"
+﻿<Page x:Class="PointOfSale.DinoNuggetCustomization"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="BrontowurstCustomization">
+      Title="DinoNuggetCustomization">
 
     <DockPanel>
         <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Customize Order</TextBlock>
@@ -23,9 +23,7 @@
                     <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </WrapPanel.Resources>
-            <Button Click="OnHoldPepperClick">Hold Pepper</Button>
-            <Button Click="OnHoldBunClick">Hold Bun</Button>
-            <Button Click="OnHoldOnionClick">Hold Onion</Button>
+            <Button Click="OnAddNuggetClick">Add Nugget</Button>
             <Button Click="OnDoneClick">Done</Button>
         </WrapPanel>
     </DockPanel>

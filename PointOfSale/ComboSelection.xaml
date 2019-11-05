@@ -18,43 +18,43 @@
                 <Setter Property="FontWeight" Value="Bold"/>
             </Style>
         </WrapPanel.Resources>
-        <Button Click="SelectCustomize">
+        <Button Click="OnBrontowurstClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-01.png" Height="69"/>
                 <TextBlock><Run Text="Brontowurst Combo"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectCustomize">
+        <Button Click="OnDinoNuggetClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png" Height="69"/>
                 <TextBlock>Dino-Nuggets Combo</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectCustomize">
+        <Button Click="OnSteakosaurusBurgerClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png" Height="69"/>
                 <TextBlock><Run Text="Steakosaurus Combo"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectCustomize">
+        <Button Click="OnTrexKingBurgerClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-06.png" Height="69"/>
                 <TextBlock><Run Text="T-Rex King Burger Combo"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectCustomize">
+        <Button Click="OnPrehistoricPBJClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-03.png" Height="69"/>
                 <TextBlock><Run Text="Prehistoric PB&amp;J Combo"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectCustomize">
+        <Button Click="OnPterodactylWingsClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-04.png" Height="69"/>
                 <TextBlock><Run Text="Pterodactly Wings Combo"/></TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="SelectCustomize">
+        <Button Click="OnVelociWrapClick">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-07.png" Height="69"/>
                 <TextBlock><Run Text="Veloci-Wrap Combo"/></TextBlock>

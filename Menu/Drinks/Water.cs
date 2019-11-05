@@ -26,15 +26,14 @@ namespace DinoDiner.Menu
         {
             get
             {
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("Size");
-                NotifyOfPropertyChanged("Description");
                 return size;
             }
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
             }
         }
 

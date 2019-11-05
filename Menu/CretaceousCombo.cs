@@ -12,11 +12,17 @@ namespace DinoDiner.Menu
     /// <summary>
     /// class definition for  combos including entree, side, and drink
     /// </summary>
-    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
-
+        /// <summary>
+        /// event handler for propertychanged
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -36,10 +42,17 @@ namespace DinoDiner.Menu
                 {
                     NotifyOfPropertyChanged(args.PropertyName);
                 };
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
+        /// <summary>
+        /// backing variable for drink
+        /// </summary>
         private Drink drink = new Sodasaurus();
+
         /// <summary>
         /// Holds the side option for the combo
         /// </summary>
@@ -55,10 +68,15 @@ namespace DinoDiner.Menu
             {
                 this.side = value;
                 this.side.Size = this.size;
+                side.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -74,11 +92,16 @@ namespace DinoDiner.Menu
             {
                 this.drink = value;
                 this.drink.Size = this.size;
+                drink.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -123,6 +146,10 @@ namespace DinoDiner.Menu
                 size = value;
                 Drink.Size = value;
                 Side.Size = value;
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Size");
             }
         }
 
