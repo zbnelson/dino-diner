@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// class that defines the entire menu
     /// </summary>
-    class Menu
+    public class Menu
     {
         public List<IMenuItem> AvailableSides { get; } = new List<IMenuItem>()
         {
